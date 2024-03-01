@@ -3,6 +3,7 @@ class Solution {
         char arr[] = s.toCharArray();
         int j = 0;
         int len = arr.length;
+        // if(arr[len-1]=='1') len=len-1;
         for(int i=0;i<len;i++)
         {
             if(arr[j]=='0'&&arr[i]=='1') 
@@ -12,15 +13,17 @@ class Solution {
             }
             if(arr[j]=='1') j++;
         }
+        swap(arr,--j,len-1);
         // System.out.println(arr);
-        for(int i=0;i<len-1;i++)
-        {
-            if(arr[i]=='1'&&arr[i+1]=='0')
-            {
-                swap(arr,i,len-1);
-                break;
-            }
-        }
+        // if(len==arr.length){
+        //     for(int i=0;i<len-1;i++)
+        // {
+        //     if(arr[i]=='1'&&arr[i+1]=='0')
+        //     {
+        //         swap(arr,i,len-1);
+        //         break;
+        //     }
+        // }}
         // System.out.println(arr);
         String ans="";
         for(int i=0;i<len;i++) ans+=arr[i];

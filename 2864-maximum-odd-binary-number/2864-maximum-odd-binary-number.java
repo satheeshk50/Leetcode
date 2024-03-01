@@ -11,7 +11,7 @@ class Solution {
             }
             if(arr[j]=='1') j++;
         }
-        System.out.println(arr);
+        // System.out.println(arr);
         for(int i=0;i<arr.length-1;i++)
         {
             if(arr[i]=='1'&&arr[i+1]=='0')
@@ -20,7 +20,7 @@ class Solution {
                 break;
             }
         }
-        System.out.println(arr);
+        // System.out.println(arr);
         String ans="";
         for(int i=0;i<arr.length;i++) ans+=arr[i];
         return ans;

@@ -7,7 +7,11 @@ class Solution {
     }
     public void backtrack(List<List<Integer>> ans,List<Integer> l ,int[] nums)
     {
-        if(l.size()==nums.length) ans.add(new ArrayList<>(l));
+        if(l.size()==nums.length)
+        {
+            ans.add(new ArrayList<>(l));
+            return ;
+        }
         else{
             for(int n:nums)
             {

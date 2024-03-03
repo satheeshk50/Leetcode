@@ -1,11 +1,11 @@
 class Solution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
-        List<Integer> l = new ArrayList<>();
+        LinkedHashSet<Integer> l = new LinkedHashSet<>();
         backtrack(ans,l,nums);
         return ans;
     }
-    public void backtrack(List<List<Integer>> ans,List<Integer> l ,int[] nums)
+    public void backtrack(List<List<Integer>> ans,LinkedHashSet<Integer> l ,int[] nums)
     {
         if(l.size()==nums.length)
         {
@@ -17,7 +17,7 @@ class Solution {
                 if(l.contains(n)) continue;
                 l.add(n);
                 backtrack(ans,l,nums);
-                l.remove(l.size()-1);
+                l.remove(n);
             }
         
     }

@@ -12,7 +12,6 @@ class Solution {
             ans.add(new ArrayList<>(l));
             return ;
         }
-        else{
             for(int n:nums)
             {
                 if(l.contains(n)) continue;
@@ -20,6 +19,6 @@ class Solution {
                 backtrack(ans,l,nums);
                 l.remove(l.size()-1);
             }
-        }
+        
     }
 }

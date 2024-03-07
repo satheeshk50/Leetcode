@@ -10,36 +10,36 @@
  */
 class Solution {
     public ListNode deleteMiddle(ListNode head) {
-        // if(head==null) return null;
-        // if(head.next==null) return null;
-        // int count = 0;
-        // ListNode temp = head;
-        // while(temp!=null)
-        // {
-        //     count++;
-        //     temp = temp.next;
-        // }
-        // int mid  = count/2;
-        // ListNode prev=null,cur = head,post=cur.next;
-        // int k=0;
-        // while(k<mid){
-        //     prev = cur;
-        //     cur=cur.next;
-        //     post = cur.next;
-        //     k++;
-        // }
-        // prev.next=post;
-        // return head;
-        ListNode fast = head;
-        ListNode slow = head,prev=null;
-        if(head==null||head.next==null) return null;
-        while(fast!=null&&fast.next!=null)
+        if(head==null) return null;
+        if(head.next==null) return null;
+        int count = 0;
+        ListNode temp = head;
+        while(temp!=null)
         {
-            fast=fast.next.next;
-            prev=slow;
-            slow=slow.next;
+            count++;
+            temp = temp.next;
         }
-        prev.next=slow.next;
+        int mid  = count/2;
+        ListNode prev=null,cur = head,post=cur.next;
+        int k=0;
+        while(k<mid){
+            prev = cur;
+            cur=cur.next;
+            post = cur.next;
+            k++;
+        }
+        prev.next=post;
         return head;
+        // ListNode fast = head;
+        // ListNode slow = head,prev=null;
+        // if(head==null||head.next==null) return null;
+        // while(fast!=null&&fast.next!=null)
+        // {
+        //     fast=fast.next.next;
+        //     prev=slow;
+        //     slow=slow.next;
+        // }
+        // prev.next=slow.next;
+        // return head;
     }
 }
